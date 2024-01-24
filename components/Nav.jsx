@@ -6,16 +6,16 @@ import { useState, useEffect } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 const Nav = () => {
-  const isUserLogged = true;
+  const { data: session } = useSession();
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
 
   useEffect(() => {
-    const setProviders = async () => {
-      // const response = await getProviders();
-      // setProviders(response);
+    const setUpProviders = async () => {
+      const response = await getProviders();
+      setProviders(response);
     };
-    setProviders();
+    setUpProviders();
   }, []);
 
   return (
@@ -34,7 +34,7 @@ const Nav = () => {
       {/* Desktop navigatiom */}
 
       <div className="sm:flex hidden">
-        {isUserLogged ? (
+        {session?.user ? (
           <div className="flex gap-3 md:gap-5">
             <Link href={"/create-promt"} className="black_btn">
               Create Post
@@ -45,7 +45,7 @@ const Nav = () => {
             </button>
             <Link href={"/profile"}>
               <Image
-                src={"assets/images/logo.svg"}
+                src={session?.user.image}
                 width={"37"}
                 height={"37"}
                 className="rounded-full"
@@ -62,19 +62,22 @@ const Nav = () => {
                   key={provider.name}
                   onClick={() => signIn(provider.id)}
                   className="black_btn"
-                ></button>
+                >
+                  Sign in
+                </button>
               ))}
           </>
         )}
       </div>
 
+      {/* {alert(session?.user)} */}
       {/* Mobile navigation */}
       <div className="sm:hidden flex relative">
-        {isUserLogged ? (
+        {session?.user ? (
           <div className="flex">
             {" "}
             <Image
-              src={"assets/images/logo.svg"}
+              src={session?.user.image}
               width={"37"}
               height={"37"}
               className="rounded-full"
@@ -119,7 +122,9 @@ const Nav = () => {
                   key={provider.name}
                   onClick={() => signIn(provider.id)}
                   className="black_btn"
-                ></button>
+                >
+                  Sign in
+                </button>
               ))}
           </>
         )}
