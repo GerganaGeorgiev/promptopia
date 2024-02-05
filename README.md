@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### 1. Description
+Fullstack single-page application, which enables users to create or search for prompts and use them in their communication with Chat GPT.
+In order to generate specific prompts, users can sing in in their own profile or preview other's users profiles. 
+Users can also browse the current active community, their prompts and search them via tag, prompt or username.
+This is a personal project, part of Youtube Next.js course.
 
-## Getting Started
+2. Links
 
-First, run the development server:
+https://promptopia-jqw8cmp7x-gerganageorgievs-projects.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+** I am using a free service to host the app, so some malfunctions or downtime might be experienced. Thus we also recommend setting-up and testing the app locally (you can follow the instructions bellow).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Creators
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Gergana Georgieva - @gerrry
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+4. Core Back-end Technologies
 
-To learn more about Next.js, take a look at the following resources:
+NextJs
+MongoDB (mongoose)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5. Core Front-end Technologies
 
-## Deploy on Vercel
+React
+Thailwind CSS
+Next Js
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+6. External Services
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Google APIs and services - Sign in via Google
+MongoDb
+Vercel for deployment
+
+
+7. Tracking and project managment
+
+Jira
+
+8. Features
+
+   Home page - user can search and browse different prompts
+   ![image](https://github.com/GerganaGeorgiev/promptopia/assets/67391470/986ab394-afbf-4be5-8154-c2186f7255f3)
+
+   My profile page - user can edit or delete their own prompts
+   
